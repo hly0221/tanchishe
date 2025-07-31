@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>贪吃蛇游戏</h1>
+            <div class="score-container">
+                <span>分数: </span>
+                <span id="score">0</span>
+                <span class="coin-container">金币: <span id="coins">0</span></span>
+                <div id="timer-container" style="display: none;">
+                    <span>剩余时间: </span>
+                    <span id="timer">60</span>秒
+                </div>
+            </div>
+        </div>
+        <canvas id="game-canvas" width="400" height="400"></canvas>
+        <div class="controls">
+            <button id="start-btn">开始游戏</button>
+            <button id="pause-btn">暂停</button>
+            <button id="share-btn" onclick="window.location.href='share.html'" style="background-color: #3498db;">分享游戏</button>
+            <div class="difficulty">
+                <span>难度: </span>
+                <select id="difficulty">
+                    <option value="easy">简单</option>
+                    <option value="medium" selected>中等</option>
+                    <option value="hard">困难</option>
+                </select>
+            </div>
+            <div class="game-mode">
+                <span>游戏模式: </span>
+                <select id="game-mode">
+                    <option value="classic" selected>经典模式</option>
+                    <option value="timed">限时模式</option>
+                </select>
+            </div>
+            <div class="snake-color">
+                <span>蛇的颜色: </span>
+                <select id="snake-color">
+                    <option value="green" selected>绿色</option>
+                    <option value="blue">蓝色</option>
+                    <option value="purple">紫色</option>
+                    <option value="orange">橙色</option>
+                    <option value="pink">粉色</option>
+                </select>
+            </div>
+        </div>
+        <div class="instructions">
+            <h3>游戏说明:</h3>
+            <p>使用方向键 ↑ ↓ ← → 控制蛇的移动</p>
+            <p>吃到食物可以增加分数和蛇的长度</p>
+            <p>吃到金币可以增加金币数量</p>
+            <p>撞到墙壁或自己的身体游戏结束</p>
+            <p>限时模式：在规定时间内达到目标分数即可通关</p>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>
